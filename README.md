@@ -24,6 +24,8 @@ $ git clone https://github.com/bastien8060/MDPin
 $ cd MDPin/py
 $ python3 pwn.py
 ```
+
+Now you just need to visit the URL of the website started and visit it with a smartphone (All but non-IOS device). The password, once entered on the smartphone will appear on the Terminal/Command Prompt where you started the server (like shown above).
 ### HTTPS
 MDPin supports Https thanks to Flask. If you are hosting your webpage (static folder) with https using another server, you will need to add https to MDPin (Because XHR disallow requests to http from https). If MDPin uses https, both the webpage (served by MDPin) and the api will run with https.
 

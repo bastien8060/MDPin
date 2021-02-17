@@ -3,7 +3,7 @@ from flask_restful import Resource, Api
 from json import dumps
 from flask_jsonpify import jsonify
 from OpenSSL import SSL
-import re, os, json, threading, time
+import re, os, json, threading, time, socket
 
 class bcolors:
     HEADER = '\033[95m'
@@ -16,6 +16,18 @@ class bcolors:
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
 
+def get_ip():
+    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    try:
+        # doesn't even have to be reachable
+        s.connect(('10.255.255.255', 1))
+        IP = s.getsockname()[0]
+    except Exception:
+        IP = '127.0.0.1'
+    finally:
+        s.close()
+    return IP
+
 
 def welcome():
 	time.sleep(5)
@@ -26,7 +38,7 @@ def welcome():
 		proto = "HTTP"
 	else:
 		proto = "Unknown Protocol"
-	print("""\033[91m
+	print("""\n\033[91m
 *     *  *****    ***    ***   ****                  
 **   **   *   *  *   *  *   *  *   *    *            
 * * * *   *   *  *   *  *      *   *                 
@@ -37,11 +49,13 @@ def welcome():
 *     *   *   *  *   *  *   *  *        *    *    *  
 *     *  *****    ***    ***   *      *****  *    *  
 \033[0m""")
-
-	print("Server running on", f"{bcolors.FAIL}0.0.0.0:{port}{bcolors.ENDC} with {bcolors.FAIL}{proto}{bcolors.ENDC}")
-	print("")
+	ip = get_ip()
+	website = proto+"://"+ip+":"+str(port)+"/web/index.html"
+	print("Server running on", f"{bcolors.FAIL}{ip}:{port}{bcolors.ENDC} with {bcolors.FAIL}{proto}{bcolors.ENDC}")
+	print(f"Server Address: {bcolors.FAIL}{ip}{bcolors.ENDC}, port:{bcolors.FAIL}{port}{bcolors.ENDC}, protocol:{bcolors.FAIL}{proto}://{bcolors.ENDC}")
+	print(f"Website Reachable on {bcolors.FAIL}{website}{bcolors.ENDC}")
 	print("\033[1m\033[92m[festus8070@Unknown\033[0m \033[1m\033[91mMDOSPin\033[0m\033[1m\033[92m]$\033[0m","Waiting for a Connection...")
-
+	print("\n")
 import sys
 cli = sys.modules['flask.cli']
 cli.show_server_banner = lambda *x: None

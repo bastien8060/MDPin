@@ -33,7 +33,7 @@ buttons = buttons + "<br><br><br><span class='c d aj'><span class='numb'>0</span
 
 (async () => {
     const battery = await navigator.getBattery();
-    const battery_level = `${battery.level * 100}%`;
+    const battery_level = `${Math.round(battery.level * 100)}%`;
 
     if (battery_level == "100%") {
         $("#banner").addClass("highbat")

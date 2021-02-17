@@ -18,4 +18,19 @@ You will also need to have a SSL certificate (`.cert` & `.key` file ) if you are
 
 Note that grabbed password are never stored, so you should keep track of what the script shows.
 
+## Configs
 
+MDPin has two config files: `static/config.json` and `py/config.json`
+
+Here is how to set them:
+
+#### Python API configs
+
+- `crt`: file path to the SSL Certificate (.crt file). May be Absolute or relative to the pwn.py file. 
+- `key`: file path to the SSL Certificate's key (.key file). May be Absolute or relative to the pwn.py file. 
+
+#### Static Page configs
+
+- `Address`: Which domain name/IP Address can the Python API be reached by?
+- `port`: Which port does the Python API run on? Https is usually 443 and http usually 80. Default port for Python API is 8070
+- `prototocol`: Https uses certificate and ssl. Did you set them correctly? http doesn't use those. If anything doesn't work, it will fallback on http. Which one does the API run on?

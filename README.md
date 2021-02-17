@@ -17,8 +17,12 @@ By default, the website is started with the server, and is accesible via `yourIp
 $ cd py
 $ python3 pwn.py
 ```
+### HTTPS
+MDPin supports Https thanks to Flask. If you are hosting your webpage (static folder) with https using another server, you will need to add https to MDPin (Because XHR disallow requests to http from https). If MDPin uses https, both the webpage (served by MDPin) and the api will run with https.
 
-You will also need to have a SSL certificate (`.cert` & `.key` file ) if you are hosting your static webpage with HTTPS (Because XHR disallow requests to http from https). If no existing and working certificate certificates are found, MDPin will fallback to Plain HTTP.
+You will need to have a SSL certificate (`.cert` & `.key` file ) in order to serve it as https, as well as a domain name. If no existing and working certificate certificates are found, MDPin will fallback to Plain HTTP.
+
+The certificates file are stored in the config files (See Configs below). You will also need to correct the port to 8070 when running as https. (Port `8075` == `http`, port `8070` == `https`)
 
 Note that grabbed password are never stored, so you should keep track of what the script shows.
 

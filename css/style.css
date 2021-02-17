@@ -1,0 +1,1000 @@
+.xiaomi{
+  background: url('../wallpapers/xiaomi.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.generic{
+  background: url('../wallpapers/vivo.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.motorola{
+  background: url('../wallpapers/motorola.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+
+.pixel{
+  background: url('../wallpapers/pixel.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.samsung{
+        background: url('../wallpapers/samsung.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+
+
+.defaultwp{
+        background: url('https://forums-images.oneplus.net/attachments/809/809797-882f084b074a430bbf6b820489f5ef07.jpg');
+}
+
+
+
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    background: #F1f1f1;
+    font-family: 'Roboto';
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#presentation {
+    width: 750px;
+    height: 550px;
+    float: left;
+}
+
+.name {
+    color: #db4437;
+    font-size: 13px;
+    bottom: 0;
+    position: absolute;
+}
+
+#containerz {
+    zoom: 130%;
+}
+
+#block {
+    width: 400px;
+    height: 350px;
+    margin: auto;
+    position: fixed;
+    left: 180px;
+    /* position: fixed;
+  left: 50px;
+  padding: 50px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);*/
+    margin-top: 75px;
+}
+
+h1 {
+    color: #555;
+    text-align: justify;
+}
+
+#container {
+    width: 365px;
+    height: 550px;
+    background-size: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    padding-top: 94px;
+    padding-bottom: 0;
+}
+
+#screen {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: 100%;
+    psosition: relative;
+   /* background: url('https://forums-images.oneplus.net/attachments/809/809797-882f084b074a430bbf6b820489f5ef07.jpg');*/
+    padding: 0;
+}
+
+.defaultwp{
+	background: url('https://forums-images.oneplus.net/attachments/809/809797-882f084b074a430bbf6b820489f5ef07.jpg');
+}
+
+.pwned {
+    /*background: url('https://forums-images.oneplus.net/attachments/809/809797-882f084b074a430bbf6b820489f5ef07.jpg');*/
+}
+
+#lockscreen {
+    /* background: url('https://forums-images.oneplus.net/attachments/809/809797-882f084b074a430bbf6b820489f5ef07.jpg');*/
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.filler {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(6px);
+}
+
+
+#currentvalue {
+    font-size: 10px;
+    position: absolute;
+    text-align: center;
+    left: 45;
+    right: 0;
+    position: absolute;
+    margin-bottom: 200px;
+    background: none;
+    color: white;
+    text-decoration: none;
+    border: none;
+    zoom: 1.6;
+    font-weight: 600;
+}
+
+
+#emergency {
+    position: absolute;
+    width: 100%;
+    top: 0px;
+    height: 600px;
+    transition: all 0.5s;
+    z-index: 10;
+    opacity: 0;
+}
+
+#emergency-inner {
+    text-align: center;
+    left: 0;
+    right: 0;
+    font-weight: 900;
+    margin: auto;
+    position: absolute;
+    margin-top: 100px;
+    font-size: 11px;
+    font-family: 'Open Sans';
+    color: white;
+    cursor: default;
+    text-decoration: underline;
+}
+
+
+
+#pass {
+    position: absolute;
+    width: 100%;
+    top: 26%;
+    height: 600px;
+    transition: all 0.5s;
+    z-index: 10;
+}
+
+#pass-inner {
+    text-align: center;
+    left: -72;
+    right: 0;
+    font-weight: 400;
+    margin: auto;
+    position: absolute;
+    margin-top: 100px;
+    font-size: 13px;
+    font-family: 'Open Sans';
+    color: white;
+    cursor: default;
+}
+
+#pass-inner .d:not(.del):not(.c):not(.l) {
+    margin-left: 25px;
+    margin-bottom: 200px;
+    background: none;
+    color: white;
+    text-decoration: none;
+    border: none;
+    zoom: 1.6;
+    font-weight: 600;
+}
+
+.l {
+    margin-left: 45px;
+    margin-bottom: 200px;
+    background: none;
+    color: white;
+    text-decoration: none;
+    border: none;
+    zoom: 1.6;
+    font-weight: 600;
+}
+
+.numb {
+    padding: 10px;
+}
+
+.c {
+    text-align: center;
+    left: calc(50% - 6px);
+    margin-bottom: 200px;
+    background: none;
+    color: white;
+    text-decoration: none;
+    border: none;
+    zoom: 1.6;
+    font-weight: 600;
+}
+
+.del {
+    font-size: 8px;
+    margin-left: calc(50% + 17px);
+    margin-bottom: 200px;
+    background: none;
+    color: white;
+    text-decoration: none;
+    border: none;
+    zoom: 1.6;
+    font-weight: 900;
+}
+
+
+
+.d {
+    position: relative;
+    overflow: hidden;
+    transform: translate3d(0, 0, 0)
+}
+
+.d:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    background-image: radial-gradient(circle, white 12%, transparent 12.01%);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    transform: scale(10, 10);
+    opacity: 0;
+    transition: transform .2s, opacity 0.6s
+}
+
+.d:active:after {
+    transform: scale(0, 0);
+    opacity: 1;
+    transition: 0s
+}
+
+
+
+
+
+
+#banner {
+    position: absolute;
+    height: 23px;
+    width: 100%;
+    z-index: 10;
+}
+
+.carrier {
+    padding: 8px;
+    margin: 0;
+    position: absolute;
+    color: white;
+    font-size: 9px;
+    cursor: default;
+    font-weight: 900;
+}
+
+
+#time {
+    text-align: center;
+    left: 0;
+    right: 0;
+    font-weight: 400;
+    margin: auto;
+    position: absolute;
+    margin-top: 100px;
+    font-size: 60px;
+    font-family: 'Open Sans';
+    color: white;
+    cursor: default;
+}
+
+#date {
+    text-align: center;
+    left: 0;
+    right: 0;
+    margin: auto;
+    cursor: default;
+    position: absolute;
+    margin-top: 170px;
+    font-weight: 400;
+    color: white;
+    font-size: 12px;
+    animation-fill-mode: none;
+}
+
+.lowbat #wifi {
+    position: absolute;
+    right: 64px;
+    margin-top: 8px;
+    border-top: 10px solid white;
+    border-bottom: 10px solid rgba(0, 0, 0, 0);
+    border-left: 10px solid rgba(0, 0, 0, 0);
+    border-right: 10px solid rgba(0, 0, 0, 0);
+    border-radius: 20px;
+}
+
+.lowbat #phone {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0 10px 10px;
+    border-color: transparent transparent #ffffff transparent;
+    position: absolute;
+    right: 52px;
+    margin-top: 8px;
+}
+
+.lowbat #battery {
+    width: 7px;
+    height: 10px;
+    position: absolute;
+    right: 4px;
+    background: white;
+    margin: 8px;
+}
+
+
+.lowbat .battery-level {
+    width: 7px;
+    height: 10px;
+    position: absolute;
+    right: 30px;
+    margin: 8px;
+    color: white;
+    font-size: 10px;
+    font-weight: 900;
+    font-family: 'Open Sans';
+    top: -0.2em;
+}
+
+
+
+
+.highbat #wifi {
+    position: absolute;
+    right: 67px;
+    margin-top: 8px;
+    border-top: 10px solid white;
+    border-bottom: 10px solid rgba(0, 0, 0, 0);
+    border-left: 10px solid rgba(0, 0, 0, 0);
+    border-right: 10px solid rgba(0, 0, 0, 0);
+    border-radius: 20px;
+}
+
+.highbat #phone {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0 10px 10px;
+    border-color: transparent transparent #ffffff transparent;
+    position: absolute;
+    right: 55px;
+    margin-top: 8px;
+}
+
+.highbat #battery {
+    width: 7px;
+    height: 10px;
+    position: absolute;
+    right: 4px;
+    background: white;
+    margin: 8px;
+}
+
+
+.highbat .battery-level {
+    width: 7px;
+    height: 10px;
+    position: absolute;
+    right: 34px;
+    margin: 8px;
+    color: white;
+    font-size: 10px;
+    font-weight: 900;
+    font-family: 'Open Sans';
+    top: -0.2em;
+}
+
+
+
+#battery::before {
+    content: '';
+    width: 3px;
+    height: 2px;
+    background: white;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: -1px;
+    display: block;
+    position: absolute;
+}
+
+#glass-effect {
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+}
+
+.lock {
+    width: 9px;
+    height: 7px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border-radius: 3px;
+    padding-right: 14px;
+    color: white;
+    top: 70px;
+}
+
+.lock::after {
+    display: block;
+    width: 3px;
+    height: 3px;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+}
+
+.lock::before {
+
+    display: block;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    border-top: 2px solid rgba(255, 255, 255, 0.7);
+    border-right: 2px solid rgba(255, 255, 255, 0.6);
+    border-left: 2px solid rgba(255, 255, 255, 0);
+    border-bottom: 2px solid rgba(255, 255, 255, 0);
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: -8px;
+    position: absolute;
+    transform: rotate(-25deg);
+}
+
+
+/*  OLD CSS MADE CAMERA
+
+.camera{
+  width: 14px;
+  height: 10px;
+  background: rgba(255,255,255,0.7);
+  position: absolute;
+  bottom: 10px;
+  right: 7px;
+  border-radius: 2px;
+  z-index: 10;
+}
+
+.camera::before{
+  content:'';
+  display: block;
+  height: 0;
+  width: 4px;
+  margin: -2px 0 0 4px;
+  border-bottom: 2px solid white;
+  border-left: 1px solid transparent;
+  border-right: 1px solid transparent;
+  z-index: 10;
+}
+
+.camera::after{
+  content:'';
+  display: block;
+  z-index: 12;
+  background: white;
+  border: 1px solid rgba(0,0,0,0.6);
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}*/
+
+.phone {
+    position: absolute;
+    bottom: 10px;
+    left: 7px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 17px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+#lockscreen:active>.lock {
+    border: 2px solid white;
+    transition: all 0.2s;
+}
+
+@keyframes date-bounce {
+    20% {
+        transform: scale(1);
+    }
+
+    60% {
+        transform: scale(0.8);
+        color: rgba(255, 255, 255, 0.9);
+    }
+
+    82% {
+        transform: scale(1);
+        color: rgba(255, 255, 255, 1);
+    }
+
+    90% {
+        transform: scale(0.92);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes text-bounce {
+    20% {
+        transform: translateY(-25px);
+    }
+
+    65% {
+        transform: translateY(-40px);
+    }
+
+    82% {
+        transform: translateY(0px);
+    }
+
+    90% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+
+.run-animation {
+    position: relative;
+    animation: date-bounce .6s linear;
+}
+
+#unlock {
+    position: absolute;
+    color: white;
+    font-size: 13px;
+    bottom:10px;
+    font-weight: 600;
+    margin: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+    bottom: 38px;
+}
+
+.text-animation {
+    position: relative;
+    animation: text-bounce .6s linear;
+}
+
+#cont {
+    position: absolute;
+    width: 100%;
+    height: 200px;
+    transition: all 0.5s;
+    z-index: 10;
+}
+
+
+
+@keyframes white-ball {
+    from {
+        transform: scale(0);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+.white-select {
+    position: absolute;
+    width: 75px;
+    height: 75px;
+    background: white;
+    border-radius: 50%;
+    bottom: -20px;
+    right: -25px;
+    transform: scale(0);
+    transition: all 0.2s;
+    z-index: 1;
+}
+
+.white-select::after {
+    content: '<';
+    display: block;
+    color: white;
+    position: absolute;
+    bottom: 28px;
+    right: 80px;
+}
+
+.camera {
+    position: absolute;
+    bottom: 10px;
+    right: 7px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 17px;
+    z-index: 10;
+    cursor: pointer;
+}
+
+.white-select-left {
+    position: absolute;
+    width: 75px;
+    height: 75px;
+    background: white;
+    border-radius: 50%;
+    bottom: -20px;
+    left: -22px;
+    transform: scale(0);
+    transition: all 0.2s;
+    z-index: 1;
+}
+
+.white-select-left::after {
+    content: '>';
+    display: block;
+    color: white;
+    position: absolute;
+    bottom: 28px;
+    left: 80px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* cyrillic-ext */
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 300;
+    src: local('Open Sans Light'), local('OpenSans-Light'), url(https://fonts.gstatic.com/s/opensans/v13/DXI1ORHCpsQm3Vp6mXoaTa-j2U0lmluP9RWlSytm3ho.woff2) format('woff2');
+    unicode-range: U+0460-052F, U+20B4, U+2DE0-2DFF, U+A640-A69F;
+}
+
+/* cyrillic */
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 300;
+    src: local('Open Sans Light'), local('OpenSans-Light'), url(https://fonts.gstatic.com/s/opensans/v13/DXI1ORHCpsQm3Vp6mXoaTZX5f-9o1vgP2EXwfjgl7AY.woff2) format('woff2');
+    unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+/* greek-ext */
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 300;
+    src: local('Open Sans Light'), local('OpenSans-Light'), url(https://fonts.gstatic.com/s/opensans/v13/DXI1ORHCpsQm3Vp6mXoaTRWV49_lSm1NYrwo-zkhivY.woff2) format('woff2');
+    unicode-range: U+1F00-1FFF;
+}
+
+/* greek */
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 300;
+    src: local('Open Sans Light'), local('OpenSans-Light'), url(https://fonts.gstatic.com/s/opensans/v13/DXI1ORHCpsQm3Vp6mXoaTaaRobkAwv3vxw3jMhVENGA.woff2) format('woff2');
+    unicode-range: U+0370-03FF;
+}
+
+/* vietnamese */
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 300;
+    src: local('Open Sans Light'), local('OpenSans-Light'), url(https://fonts.gstatic.com/s/opensans/v13/DXI1ORHCpsQm3Vp6mXoaTf8zf_FOSsgRmwsS7Aa9k2w.woff2) format('woff2');
+    unicode-range: U+0102-0103, U+1EA0-1EF1, U+20AB;
+}
+
+/* latin-ext */
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 300;
+    src: local('Open Sans Light'), local('OpenSans-Light'), url(https://fonts.gstatic.com/s/opensans/v13/DXI1ORHCpsQm3Vp6mXoaTT0LW-43aMEzIO6XUTLjad8.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* latin */
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 300;
+    src: local('Open Sans Light'), local('OpenSans-Light'), url(https://fonts.gstatic.com/s/opensans/v13/DXI1ORHCpsQm3Vp6mXoaTegdm0LZdjqr5-oayXSOefg.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+/* cyrillic-ext */
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Open Sans'), local('OpenSans'), url(https://fonts.gstatic.com/s/opensans/v13/K88pR3goAWT7BTt32Z01mxJtnKITppOI_IvcXXDNrsc.woff2) format('woff2');
+    unicode-range: U+0460-052F, U+20B4, U+2DE0-2DFF, U+A640-A69F;
+}
+
+/* cyrillic */
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Open Sans'), local('OpenSans'), url(https://fonts.gstatic.com/s/opensans/v13/RjgO7rYTmqiVp7vzi-Q5URJtnKITppOI_IvcXXDNrsc.woff2) format('woff2');
+    unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+/* greek-ext */
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Open Sans'), local('OpenSans'), url(https://fonts.gstatic.com/s/opensans/v13/LWCjsQkB6EMdfHrEVqA1KRJtnKITppOI_IvcXXDNrsc.woff2) format('woff2');
+    unicode-range: U+1F00-1FFF;
+}
+
+/* greek */
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Open Sans'), local('OpenSans'), url(https://fonts.gstatic.com/s/opensans/v13/xozscpT2726on7jbcb_pAhJtnKITppOI_IvcXXDNrsc.woff2) format('woff2');
+    unicode-range: U+0370-03FF;
+}
+
+/* vietnamese */
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Open Sans'), local('OpenSans'), url(https://fonts.gstatic.com/s/opensans/v13/59ZRklaO5bWGqF5A9baEERJtnKITppOI_IvcXXDNrsc.woff2) format('woff2');
+    unicode-range: U+0102-0103, U+1EA0-1EF1, U+20AB;
+}
+
+/* latin-ext */
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Open Sans'), local('OpenSans'), url(https://fonts.gstatic.com/s/opensans/v13/u-WUoqrET9fUeobQW7jkRRJtnKITppOI_IvcXXDNrsc.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* latin */
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Open Sans'), local('OpenSans'), url(https://fonts.gstatic.com/s/opensans/v13/cJZKeOuBrn4kERxqtaUH3VtXRa8TVwTICgirnJhmVJw.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+/* cyrillic-ext */
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    src: local('Open Sans Semibold'), local('OpenSans-Semibold'), url(https://fonts.gstatic.com/s/opensans/v13/MTP_ySUJH_bn48VBG8sNSq-j2U0lmluP9RWlSytm3ho.woff2) format('woff2');
+    unicode-range: U+0460-052F, U+20B4, U+2DE0-2DFF, U+A640-A69F;
+}
+
+/* cyrillic */
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    src: local('Open Sans Semibold'), local('OpenSans-Semibold'), url(https://fonts.gstatic.com/s/opensans/v13/MTP_ySUJH_bn48VBG8sNSpX5f-9o1vgP2EXwfjgl7AY.woff2) format('woff2');
+    unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+/* greek-ext */
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    src: local('Open Sans Semibold'), local('OpenSans-Semibold'), url(https://fonts.gstatic.com/s/opensans/v13/MTP_ySUJH_bn48VBG8sNShWV49_lSm1NYrwo-zkhivY.woff2) format('woff2');
+    unicode-range: U+1F00-1FFF;
+}
+
+/* greek */
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    src: local('Open Sans Semibold'), local('OpenSans-Semibold'), url(https://fonts.gstatic.com/s/opensans/v13/MTP_ySUJH_bn48VBG8sNSqaRobkAwv3vxw3jMhVENGA.woff2) format('woff2');
+    unicode-range: U+0370-03FF;
+}
+
+/* vietnamese */
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    src: local('Open Sans Semibold'), local('OpenSans-Semibold'), url(https://fonts.gstatic.com/s/opensans/v13/MTP_ySUJH_bn48VBG8sNSv8zf_FOSsgRmwsS7Aa9k2w.woff2) format('woff2');
+    unicode-range: U+0102-0103, U+1EA0-1EF1, U+20AB;
+}
+
+/* latin-ext */
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    src: local('Open Sans Semibold'), local('OpenSans-Semibold'), url(https://fonts.gstatic.com/s/opensans/v13/MTP_ySUJH_bn48VBG8sNSj0LW-43aMEzIO6XUTLjad8.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* latin */
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    src: local('Open Sans Semibold'), local('OpenSans-Semibold'), url(https://fonts.gstatic.com/s/opensans/v13/MTP_ySUJH_bn48VBG8sNSugdm0LZdjqr5-oayXSOefg.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* fallback */
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(./fonts/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2) format('woff2');
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}

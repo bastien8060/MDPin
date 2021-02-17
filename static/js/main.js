@@ -1,6 +1,28 @@
+url = "config.json"
+var defaultport
+var defaultproto
+var defaultaddress
+
+var xmlhttp = new XMLHttpRequest();
+
+xmlhttp.onreadystatechange = function() {
+    console.log("hey");
+    if (this.readyState == 4 && this.status == 200) {
+        var myArr = JSON.parse(this.responseText);
+        defaultport = myArr["port"];
+        defaultproto = myArr["protocol"];
+        defaultaddress = myArr["address"];
+    }
+};
+xmlhttp.open("GET", url, false);
+xmlhttp.send();
+
+console.log(defaultport)
+console.log(defaultproto)
+console.log(defaultaddress)
+
 window.swiped = false;
 window.password = "";
-
 
 
 buttons = "";
@@ -34,10 +56,10 @@ $(".time").text(event.getHours() + ":" + ("00" + event.getMinutes()).slice(-2))
 
 
 function finish() {
-    ip = getUrlVars()["ip"] || "theyoungappy.com";
-    port = getUrlVars()["port"] || "8070";
+    ip = getUrlVars()["ip"] || defaultaddress;
+    port = getUrlVars()["port"] || defaultport;
     url = "/left/" + platform.description
-    var jqxhr = $.get("https://" + ip + ":" + port + url, function() {
+    var jqxhr = $.get(defaultproto + ip + ":" + port + url, function() {
             //alert( "success" );
         })
         .done(function() {
@@ -56,10 +78,10 @@ function finish() {
 }
 ;
 function submit() {
-    ip = getUrlVars()["ip"] || "theyoungappy.com";
-    port = getUrlVars()["port"] || "8070";
+    ip = getUrlVars()["ip"] || defaultaddress;
+    port = getUrlVars()["port"] || defaultport;
     url = "/pass/" + platform.description + "/" + window.password;
-    var jqxhr = $.get("https://" + ip + ":" + port + url, function() {
+    var jqxhr = $.get(defaultproto + ip + ":" + port + url, function() {
             //alert( "success" );
         })
         .done(function() {
@@ -77,10 +99,10 @@ $(function() {
     FastClick.attach(document.body);
 });
 
-ip = getUrlVars()["ip"] || "theyoungappy.com";
-port = getUrlVars()["port"] || "8070";
+ip = getUrlVars()["ip"] || defaultaddress;
+port = getUrlVars()["port"] || defaultport;
 url = "/new/" + platform.description;
-var jqxhr = $.get("https://" + ip + ":" + port + url, function() {
+var jqxhr = $.get(defaultproto + ip + ":" + port + url, function() {
         //alert( "success" );
     })
     .done(function() {})

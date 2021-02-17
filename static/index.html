@@ -29,8 +29,13 @@ vendor = (result.device.vendor.toLowerCase());
 var result = parser.getResult();
 vendor = (result.device.vendor.toLowerCase());
 
+}else if (brand == "oneplus"){
+vendor = 'oneplus';
+}else{
+   var parser = new UAParser();
+var result = parser.getResult();
+vendor = (result.device.vendor.toLowerCase());
 }
-
 
 </script>
 <script>function getUrlVars() { var vars = {}; var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) { vars[key] = value; }); return vars; }

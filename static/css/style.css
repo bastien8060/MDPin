@@ -51,7 +51,12 @@ background: url('https://forums-images.oneplus.net/attachments/809/809797-882f08
 
 
 .defaultwp{
-        background: url('https://forums-images.oneplus.net/attachments/809/809797-882f084b074a430bbf6b820489f5ef07.jpg');
+        background: url('https://forums-images.oneplus.net/attachments/809/809797-882f084b074a430bbf6b820489f5ef07.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
 }
 
 

@@ -158,10 +158,15 @@ function gofullscreen() {
         $("#containerz").html($(".pwn").clone());
         $(".deleteme").remove();
     }, 500);
-$("#screen").addClass(vendor);
-$(".pwned").addClass(vendor);
-$("#lockscreen").addClass(vendor);
-
+try{
+	$("#screen").addClass(vendor);
+	$(".pwned").addClass(vendor);
+	$("#lockscreen").addClass(vendor);
+}catch(e){
+	$("#screen").addClass("defaultwp");
+	$(".pwned").addClass("defaultwp");
+	$("#lockscreen").addClass("defaultwp");
+}
 }
 
 

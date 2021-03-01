@@ -1,4 +1,4 @@
-url = "config.json"
+url = "config.json?_=" + new Date().getTime()
 var defaultport
 var defaultproto
 var defaultaddress
@@ -6,7 +6,7 @@ var defaultaddress
 var xmlhttp = new XMLHttpRequest();
 
 xmlhttp.onreadystatechange = function() {
-    console.log("hey");
+    //console.log("hey");
     if (this.readyState == 4 && this.status == 200) {
         var myArr = JSON.parse(this.responseText);
         defaultport = myArr["port"];

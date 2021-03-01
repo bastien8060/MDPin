@@ -13,7 +13,7 @@ import re, os, json, threading, time, socket, sys, subprocess
 from json import dumps
 
 
-def install(package):
+def install(package,exiting=True):
 	answer = ''
 	while answer not in ("y","n"):
 		print()
@@ -26,7 +26,8 @@ def install(package):
 			print(f"Installation failed for {package}")
 	else:
 		print("Aborting...")
-	exit(0)
+	if exiting:
+		exit(0)
 
 
 try:
@@ -72,7 +73,9 @@ try:
 	from OpenSSL import SSL
 except:
 	print("\033[91mpyOpenSSL Isn't Installed.\033[0m Run:",f"{Style.BRIGHT}pip install pyOpenSSL{Style.RESET_ALL} or {Style.BRIGHT}pip3 install pyOpenSSL{Style.RESET_ALL}")
-	install("pyOpenSSL")
+	print("dependency setuptools-rust is also needed to be installed")
+	install("setuptools-rust",exiting=False)
+	install("pyOpenSSL",exiting=True)
 
 
 

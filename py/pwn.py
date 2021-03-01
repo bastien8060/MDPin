@@ -1,10 +1,3 @@
-from flask import Flask, request
-from flask_restful import Resource, Api
-from json import dumps
-from flask_jsonpify import jsonify
-from OpenSSL import SSL
-import re, os, json, threading, time, socket
-
 class bcolors:
     HEADER = '\033[95m'
     OKBLUE = '\033[94m'
@@ -15,6 +8,73 @@ class bcolors:
     ENDC = '\033[0m'
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
+
+import re, os, json, threading, time, socket, sys, subprocess
+from json import dumps
+
+
+def install(package):
+	answer = ''
+	while answer not in ("y","n"):
+		print()
+		answer = input(f"Do you want to install {package}? [Y/N] ").lower()
+	if answer == 'y':
+		try:
+			print()
+			subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+		except:
+			print(f"Installation failed for {package}")
+	else:
+		print("Aborting...")
+	exit(0)
+
+
+try:
+	import colorama
+except:
+	print("Colorama Isn't Installed. Run: pip install colorama or pip3 install colorama")
+	install("colorama")
+
+from colorama import init
+from colorama import Fore, Back, Style
+init()
+
+try:
+	from flask import Flask, request
+except:
+	print("\033[91mFlask Isn't Installed.\033[0m Run:",f"{Style.BRIGHT}pip install Flask{Style.RESET_ALL} or {Style.BRIGHT}pip3 install Flask{Style.RESET_ALL}")
+	install("Flask")
+
+
+
+try:
+	from flask_restful import Resource, Api
+except:
+	try:
+		from Flask_RESTful import Resource, Api
+	except:
+		print("\033[91mFlask_RESTful Isn't Installed.\033[0m Run:",f"{Style.BRIGHT}pip install Flask_RESTful{Style.RESET_ALL} or {Style.BRIGHT}pip3 install Flask_RESTful{Style.RESET_ALL}")
+		install("Flask_RESTful")
+
+
+
+
+
+try:
+	from flask_jsonpify import jsonify
+except:
+	print("\033[91mFlask-Jsonpify Isn't Installed.\033[0m Run:",f"{Style.BRIGHT}pip install Flask_Jsonpify{Style.RESET_ALL} or {Style.BRIGHT}pip3 install Flask_Jsonpify{Style.RESET_ALL}")
+	install("flask_jsonpify")
+
+
+
+try:
+	from OpenSSL import SSL
+except:
+	print("\033[91mpyOpenSSL Isn't Installed.\033[0m Run:",f"{Style.BRIGHT}pip install pyOpenSSL{Style.RESET_ALL} or {Style.BRIGHT}pip3 install pyOpenSSL{Style.RESET_ALL}")
+	install("pyOpenSSL")
+
+
 
 def get_ip():
     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
@@ -50,7 +110,7 @@ def welcome():
 *     *  *****    ***    ***   *      *****  *    *  
 \033[0m""")
 	ip = get_ip()
-	website = proto+"://"+ip+":"+str(port)+"/web/index.html"
+	website = proto.lower()+"://"+ip+":"+str(port)+"/web/index.html"
 	print("Server running on", f"{bcolors.FAIL}{ip}:{port}{bcolors.ENDC} with {bcolors.FAIL}{proto}{bcolors.ENDC}")
 	print(f"Server Address: {bcolors.FAIL}{ip}{bcolors.ENDC}, port:{bcolors.FAIL}{port}{bcolors.ENDC}, protocol:{bcolors.FAIL}{proto}://{bcolors.ENDC}")
 	print(f"Website Reachable on {bcolors.FAIL}{website}{bcolors.ENDC}")
@@ -118,8 +178,8 @@ if __name__ == '__main__':
                 print(ee)
           template = "An exception of type {0} occurred. Arguments:\n{1!r}"
           message = template.format(type(ex).__name__, ex.args)
-          print(message)
+          #print(message)
           if type(ex).__name__ == "FileNotFoundError":
-               print("\nCertificate files were not found!")
+               print("\nCertificate files were not found! It's okay. MDPin is falling back to plain HTTP.")
           port = 8075
           app.run(port='8075',host='0.0.0.0')

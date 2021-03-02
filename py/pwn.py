@@ -12,12 +12,14 @@ class bcolors:
 import re, os, json, threading, time, socket, sys, subprocess, sys, logging
 from json import dumps
 
-directories=['static',str(os.path.join('..','static')),str(os.path.join('..','..','static'))]
+directories=['static',str(os.path.join('py','static')),str(os.path.join('..','static')),str(os.path.join('..','..','static'))]
 
-static_dir = 'static'
-for i in directories:
-	if os.path.isdir(i):
-		static_dir = i
+static_dir = '../static'
+if os.name == "nt":
+	for i in directories:
+		if os.path.isdir(i):
+			static_dir = i
+print(f'Chosen Static Directory is {static_dir}')
 
 def install(package,exiting=True):
 	answer = ''

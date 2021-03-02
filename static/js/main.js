@@ -130,7 +130,11 @@ function addeventh() {
 }
 
 function gofullscreen() {
-
+    try{
+        screen.orientation.lock()
+    }catch(e){
+        console.log(e)
+    }
     setTimeout(() => {
         container = $("#containerz")
         bodyel = $('body')

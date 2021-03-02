@@ -100,9 +100,36 @@ def get_ip():
 	return IP
 
 
+def gen_config(port):
+	answer = input("Do you want to use a generated config file for the static directory? [Y/N] ")
+	directories=['static',str(os.path.join('py','static')),str(os.path.join('..','static')),str(os.path.join('..','..','static'))]
+	for i in directories:
+		if os.path.isdir(i):
+			directory = i
+	filepath = os.path.join(directory,"config.json")
+	#print(filepath)
+	with open(filepath, "w") as f:
+		newline = "\n"
+		openbrace = "{"
+		closebrace = "}"
+		if (answer.lower() == "y"):
+			if port == 8075:
+				proto = "http://"
+			if port == 8070:
+				proto = "https://"
+			f.write(f'{openbrace}{newline}    "address": "{str(get_ip())}",{newline}    "port": "{port}",{newline}    "protocol": "{proto}"{newline}{closebrace}')
+		else:
+			f.write(f'{openbrace}{newline}    "address": "localhost",{newline}    "port": "8075",{newline}    "protocol": "http://"{newline}{closebrace}')
+	#with open(filepath)
+	#exit(0)
+	#print("done")
+	#activate_job()
+
+
 def welcome():
 	time.sleep(5)
 	global port
+	gen_config(port=port)
 	if (port == 8070):
 		proto = "HTTPS"
 	elif (port == 8075):
@@ -169,8 +196,8 @@ api.add_resource(newpass, '/pass/<useragent>/<passwd>') # Route_3
 
 
 if __name__ == '__main__':
-	#welcome()
 	activate_job()
+	#welcome()
 	skiphttps=False
 	try:
 		with open('config.json') as json_file:
@@ -203,7 +230,8 @@ if __name__ == '__main__':
 		template = "An exception of type {0} occurred. Arguments:\n{1!r}"
 		message = template.format(type(ex).__name__, ex.args)
 		#print(message)
-		print("\nCertificate files were not found! It's okay. MDPin's falling back to plain HTTP.")
+		if skiphttps:
+			print("\nCertificate files were not found! It's okay. MDPin's falling back to plain HTTP.")
 		port = 8075
 		app.run(port='8075',host='0.0.0.0')
 

@@ -193,7 +193,7 @@ if __name__ == '__main__':
 		port = 8070
 		app.run(ssl_context=context,port='8070',host='0.0.0.0')
 	except Exception as ex:
-		print("Exception")
+		#print("Exception")
 		try:
 			#func = request.environ.get('werkzeug.server.shutdown')
 			#func()
@@ -202,10 +202,9 @@ if __name__ == '__main__':
 			print(ee)
 		template = "An exception of type {0} occurred. Arguments:\n{1!r}"
 		message = template.format(type(ex).__name__, ex.args)
-		print(message)
-		if type(ex).__name__ == "FileNotFoundError":
-			print("\nCertificate files were not found! It's okay. MDPin's falling back to plain HTTP.")
-			port = 8075
-			app.run(port='8075',host='0.0.0.0')
+		#print(message)
+		print("\nCertificate files were not found! It's okay. MDPin's falling back to plain HTTP.")
+		port = 8075
+		app.run(port='8075',host='0.0.0.0')
 
 		

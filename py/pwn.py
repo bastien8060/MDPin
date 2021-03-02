@@ -188,6 +188,8 @@ if __name__ == '__main__':
 
 
 	try:
+		if skiphttps:
+			raise Exception('Skipped Https')
 		port = 8070
 		app.run(ssl_context=context,port='8070',host='0.0.0.0')
 	except Exception as ex:

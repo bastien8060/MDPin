@@ -193,6 +193,7 @@ if __name__ == '__main__':
 		port = 8070
 		app.run(ssl_context=context,port='8070',host='0.0.0.0')
 	except Exception as ex:
+		print("Exception")
 		try:
 			#func = request.environ.get('werkzeug.server.shutdown')
 			#func()

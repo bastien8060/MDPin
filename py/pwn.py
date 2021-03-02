@@ -201,8 +201,7 @@ if __name__ == '__main__':
 		message = template.format(type(ex).__name__, ex.args)
 		#print(message)
 		if type(ex).__name__ == "FileNotFoundError":
-			if not skiphttps:
-				print("\nCertificate files were not found! It's okay. MDPin's falling back to plain HTTP.")
+			print("\nCertificate files were not found! It's okay. MDPin's falling back to plain HTTP.")
 			port = 8075
 			app.run(port='8075',host='0.0.0.0')
 

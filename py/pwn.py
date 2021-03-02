@@ -181,8 +181,8 @@ if __name__ == '__main__':
 			context = (_crt,_key)
 	except:
 		print('Config.json was not found in current directory. Skipping HTTPS.')
-		_key = 'none'
-		_crt = 'none'
+		_key = './none.key'
+		_crt = './none.crt'
 		skiphttps=True
 		context = (_crt,_key)
 

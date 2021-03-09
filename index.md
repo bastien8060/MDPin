@@ -4,7 +4,7 @@
 MDPin is a server and a website. Itcontains an UI to fake a Android login screen to steal their pin code. It works via a web browser, by going fullscreen.
 
 <p float="left">
-  <div style="background-image:linear-gradient(to right, #91ACCD , #AAC6DF);">
+  <div style="background-image:linear-gradient(to right, #91ACCD , #bbd1e5);">
     <br><br>
     <center><img src="https://user-images.githubusercontent.com/26277763/110485080-2fa1da80-80e3-11eb-902d-68ced799c047.gif" width="360" /><br><br></center>
   </div>
